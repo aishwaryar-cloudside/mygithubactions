@@ -1,0 +1,13 @@
+apiVersion: autoscaling//v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: my-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment  # The kind of resource you want to autoscale (e.g., Deployment, StatefulSet)
+    name: wordpress-deployment # The name of the resource you want to autoscale
+  minReplicas: 1  # Minimum number of replicas
+  maxReplicas: 5  # Maximum number of replicas
+  targetAverageUtilization: 50   # Target average CPU utilization percentage
+
