@@ -36,7 +36,7 @@ spec:
       - image: wordpress:4.8-apache
         name: wordpress
         env:
-        - name: 35.193.253.168
+        - name: WORDPRESS_DB_HOST
           value: wordpress-mysql
         - name: WORDPRESS_DB_PASSWORD
           valueFrom:
